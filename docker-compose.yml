@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres
+    container_name: pdfgen_container
+    environment:
+      POSTGRES_DB: pdfgen
+      POSTGRES_USER: postgress
+      POSTGRES_PASSWORD: postgress
+    ports:
+      - "5438:5432"
+    restart: always
