@@ -1,0 +1,7 @@
+CREATE TABLE endereco (
+id BIGSERIAL PRIMARY KEY,
+endereco VARCHAR(255),
+bairro VARCHAR(255),
+cidade VARCHAR(255),
+cep VARCHAR(20)
+);

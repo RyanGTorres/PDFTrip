@@ -3,13 +3,11 @@ spring:
     name: PdfGen
 
   datasource:
-    url: jdbc:h2:mem:test00
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-    h2:
-      console: true
-      path: /h2-console
+
+    url: jdbc:postgresql://localhost:5438/pdfgen
+    username: postgress
+    password: postgress
+
 
   jpa:
     show_sql: true

@@ -12,22 +12,26 @@ public class Viagem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "loja_vendedora")
     private String lojaVendedora;
 
     private String excursao;
 
+    @Column(name = "data_saida")
     private Date dataSaida;
 
+    @Column(name = "data_retorno")
     private Date dataRetorno;
 
     private String hotel;
 
-    @OneToMany(mappedBy = "viagem")
+    @OneToMany
     private List<InformacoesViagem> informacoesViagems;
 
-    @OneToMany(mappedBy = "viagem")
+    @OneToMany
     private List<Passageiro> passageiros;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_apartamento")
     private TipoApartamento tipoApartamento;
 }

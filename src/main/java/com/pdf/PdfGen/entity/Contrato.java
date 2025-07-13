@@ -1,6 +1,8 @@
 package com.pdf.PdfGen.entity;
 
 import jakarta.persistence.*;
+
+import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
@@ -12,7 +14,19 @@ public class Contrato {
 
     private String identificador;
 
-    private Double valorTotalContrato;
+    @Column(name = "valor_total_contrato")
+    private BigDecimal valorTotalContrato;
+
+    private BigDecimal valor;
+
+    private BigDecimal desconto;
+
+    private BigDecimal total;
+
+    @Column(name = "forma_pagamento")
+    private String formaPagamento;
+
+    private String observacao;
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
@@ -25,6 +39,4 @@ public class Contrato {
     @OneToMany(mappedBy = "contrato", cascade = CascadeType.ALL)
     private List<Passageiro> passageiros;
 
-    @OneToMany(mappedBy = "contrato", cascade = CascadeType.ALL)
-    private List<Pagamento> pagamentos;
 }

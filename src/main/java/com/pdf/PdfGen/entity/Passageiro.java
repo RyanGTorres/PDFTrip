@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
+
 
 @Entity
 @Table(name = "passageiro")
@@ -19,8 +19,10 @@ public class Passageiro {
 
     private String rg;
 
+    @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
+    @Column(name = "data_unitario")
     private BigDecimal valorUnitario;
 
     @ManyToOne
@@ -28,6 +30,6 @@ public class Passageiro {
     private Contrato contrato;
 
     @ManyToOne
-    @JoinColumn(name = "viagem_id") // 👈 ESSA É A FK QUE FALTAVA
+    @JoinColumn(name = "viagem_id")
     private Viagem viagem;
 }
